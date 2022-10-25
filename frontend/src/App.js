@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import { Container } from "./layout/Container";
+import { useGetDataQuery } from "./store/dataSlice";
 
-function App() {
+const App = () => {
+  const { data } = useGetDataQuery();
+  console.log(data);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container maxWidth="45rem" padding="1rem">
+      App
+    </Container>
   );
-}
+};
 
 export default App;
