@@ -1,4 +1,4 @@
-import { css } from 'styled-components';
+import { css } from "styled-components";
 
 const normalize = css`
   *,
@@ -11,6 +11,9 @@ const normalize = css`
     margin: 0;
     padding: 0;
     font: inherit;
+    border: none;
+    outline: none;
+    background: none;
   }
 
   ul,
@@ -63,10 +66,8 @@ const normalize = css`
     }
   }
 
-  button {
-    border: none;
-    outline: none;
-    background: none;
+  button,
+  input {
     cursor: pointer;
   }
 `;

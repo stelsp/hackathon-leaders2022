@@ -1,14 +1,14 @@
-import { Container } from "./layout/Container";
-import { useGetDataQuery } from "./store/dataSlice";
+import Header from "./layout/Header";
+import Footer from "./layout/Footer";
+import Main from "./layout/Main";
 
 const App = () => {
-  const { data } = useGetDataQuery();
-  console.log(data);
-
   return (
-    <Container maxWidth="45rem" padding="1rem">
-      App
-    </Container>
+    <>
+      <Header />
+      <Main />
+      <Footer />
+    </>
   );
 };
 
