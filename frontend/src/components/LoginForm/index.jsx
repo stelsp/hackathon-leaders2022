@@ -1,17 +1,19 @@
 import React from "react";
-import { Container } from "../../layout/Container";
-import { PageHeading } from "../../layout/PageHeading";
+import { Container } from "../UI/Container";
+import { PageHeading } from "../UI/PageHeading";
+import { ButtonPrimary } from "../UI/Button";
+import { InputPrimary } from "../UI/Input";
 import { Form, Wrapper } from "./style";
 
 const LoginForm = () => {
   return (
     <Wrapper>
-      <Container>
+      <Container pt="10rem" pb="10rem">
         <PageHeading>Login</PageHeading>
         <Form>
-          <input id="email" type="email" placeholder="email" />
-          <input id="password" type="text" placeholder="password" />
-          <button>submit</button>
+          <InputPrimary id="email" type="email" placeholder="email" />
+          <InputPrimary id="password" type="text" placeholder="password" />
+          <ButtonPrimary>submit</ButtonPrimary>
         </Form>
       </Container>
     </Wrapper>

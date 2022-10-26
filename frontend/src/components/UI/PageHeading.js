@@ -8,8 +8,4 @@ export const PageHeading = styled.h2`
   text-align: center;
   font-size: var(--fs);
   font-weight: var(--fw);
-
-  @media (min-width: 768px) {
-    --fs: ${(props) => props.fs * 1.3 || "2rem"};
-  }
 `;

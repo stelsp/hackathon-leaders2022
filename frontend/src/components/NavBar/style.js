@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-  background-color: grey;
+  background-color: var(--clr-bg-primary);
 `;
 
 export const Nav = styled.nav`
