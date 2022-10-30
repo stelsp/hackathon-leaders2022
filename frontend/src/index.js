@@ -1,17 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Provider } from "react-redux";
 import { BrowserRouter } from "react-router-dom";
+import { QueryClientProvider, QueryClient } from "@tanstack/react-query";
+
 import Global from "./styled/global";
 import App from "./App";
-import { store } from "./store";
+
+const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
-    <Provider store={store}>
-      <Global />
+    <QueryClientProvider client={queryClient}>
       <App />
-    </Provider>
+      <Global />
+    </QueryClientProvider>
   </BrowserRouter>
 );
