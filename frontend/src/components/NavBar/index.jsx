@@ -1,37 +1,35 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Container } from "../UI/Container";
-import { Nav, Wrapper } from "./style";
+import Container from "../../UI/Container";
+import { NavFooter, NavHeader } from "./style";
 
 const NavBarHeader = () => {
   return (
-    <Nav>
-      <Link to="/">Home</Link>
-      <Link to="/page1">Page 1</Link>
-      <Link to="/page2">Page 2</Link>
-      <Link to="/page3">Page 3</Link>
-      <Link to="/login">Login</Link>
-    </Nav>
+    <NavHeader>
+      <Link to="/">Главная</Link>
+      <Link to="/importDynamic">Динамика импорта</Link>
+      <Link to="/universalProducts">Универсальные товары</Link>
+      {/* <Link to="/page3">Page 3</Link> */}
+      <Link to="/login">Логин</Link>
+    </NavHeader>
   );
 };
 
 const NavBarFooter = () => {
   return (
-    <Nav>
-      <Link to="/">Home</Link>
-      <Link to="/login">Login</Link>
-    </Nav>
+    <NavFooter>
+      <Link to="/">Главная</Link>
+      <Link to="/login">Логин</Link>
+    </NavFooter>
   );
 };
 
 const NavBar = ({ place }) => {
   return (
-    <Wrapper>
-      <Container>
-        {place === "header" && <NavBarHeader />}
-        {place === "footer" && <NavBarFooter />}
-      </Container>
-    </Wrapper>
+    <Container>
+      {place === "header" && <NavBarHeader />}
+      {place === "footer" && <NavBarFooter />}
+    </Container>
   );
 };
 

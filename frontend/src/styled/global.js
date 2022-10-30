@@ -22,13 +22,24 @@ const Global = createGlobalStyle`
     --fw-600: 600;
     --fw-700: 700;
     --fw-800: 800;
+
+    --page-heading-fs: 2rem;
+    --page-heading-fw: var(--fw-600);
+
+    --container-max-width: 1200px;
   }
 
   body {
     font-family: var(--ff-primary);
     font-weight: var(--fw-400);
-    background-color: var(--clr-bg-primary);
+    background-color: var(--clr-bg-secondary);
     min-width: 320px;
+  }
+
+  b {
+    font-weight: var(--fw-600);
+    font-size: 1.2rem;
+
   }
 `;
 

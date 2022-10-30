@@ -1,6 +1,7 @@
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
-import { getData } from "./api";
+import { getData } from "../api";
+import Hero from "../components/Hero";
 
 const Home = () => {
   const { isLoading, error, data } = useQuery(["project"], getData);
@@ -8,7 +9,7 @@ const Home = () => {
   if (isLoading) return <div>Загрузка...</div>;
   if (error) return <div>Ошибка {error.message}</div>;
 
-  return <div style={{ textAlign: "center" }}>Home {data}</div>;
+  return <Hero />;
 };
 
 export default Home;
