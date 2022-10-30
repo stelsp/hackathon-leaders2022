@@ -9,11 +9,6 @@ DIRECTION_CHOICES = [
     ("ИМ", "Импорт"),
 ]
 
-TRADECODE_CHOICES = [
-    ("new", "new"),
-    ("old", "old"),
-]
-
 
 def current_year():
     return datetime.date.today().year
@@ -38,7 +33,7 @@ class Country(models.Model):
 
 class Direction(models.Model):
     name = models.CharField(
-        "Направление", choices=DIRECTION_CHOICES, default=None
+        "Направление", choices=DIRECTION_CHOICES, default=None, max_length=200
     )
 
     class Meta:
@@ -53,22 +48,47 @@ class Direction(models.Model):
 class Product(models.Model):
     name = models.CharField("Группа товаров", max_length=200)
 
+    class Meta:
+        ordering = ("name",)
+        verbose_name = "Группа продукта"
+        verbose_name_plural = "Группы продуктов"
+
+    def __str__(self):
+        return self.name
+
 
 class TradeCode(models.Model):
     code = models.PositiveIntegerField("ТНВЭД")
     product = models.ForeignKey(
         Product, on_delete=models.CASCADE, related_name="trade_code", verbose_name="Группа товаров"
     )
-    version = models.CharField(
-        "Версия ТНВЭД", choices=TRADECODE_CHOICES, default="new"
-    )
+    is_new_version = models.BooleanField("Версия ТНВЭД до 2022 г.", default=False)
+
+    class Meta:
+        ordering = ('code',)
+        verbose_name = "ТНВЭД"
+        verbose_name_plural = "ТНВЭД"
+
+    def __str__(self):
+        return self.product
 
 
 class Region(models.Model):
-    pass
+    code = models.PositiveIntegerField("Код региона")
+    name = models.CharField("Группа товаров", max_length=200)
+    district = models.CharField("Округ", max_length=200)
+
+    class Meta:
+        ordering = ('code',)
+        verbose_name = "Регион импорта"
+        verbose_name_plural = "Регионы импорта"
+
+    def __str__(self):
+        return self.name
 
 
 class Operation(models.Model):
+    period = models.DateField("Дата операции")
     trade_code = models.ForeignKey(
         TradeCode, on_delete=models.CASCADE, related_name="operation", verbose_name="ТНВЭД"
     )
@@ -84,9 +104,17 @@ class Operation(models.Model):
     year = models.PositiveIntegerField(
         default=current_year(), validators=[MinValueValidator(1984), max_value_current_year]
     )
-    measurement_unit = models.CharField('Единица измерения', max_length=200)
     netto = models.PositiveIntegerField("Вес")
     value = models.PositiveIntegerField("Стоимость")
     region = models.ForeignKey(
         Region, on_delete=models.CASCADE, related_name="operation", verbose_name="Регион импорта"
     )
+    # measurement_unit = models.CharField('Единица измерения', max_length=200)
+
+    class Meta:
+        ordering = ('-period',)
+        verbose_name = "Операция"
+        verbose_name_plural = "Операции"
+
+    def __str__(self):
+        return f"Операция {self.pk}"
