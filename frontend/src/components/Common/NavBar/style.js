@@ -4,14 +4,14 @@ export const NavHeader = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  border-bottom: 1px solid black;
+  font-size: 1.5rem;
+  /* border-bottom: 1px solid black; */
 `;
 
 export const NavFooter = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  border-top: 1px solid black;
+  font-size: 1.5rem;
+  /* border-top: 1px solid black; */
 `;

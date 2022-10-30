@@ -3,8 +3,8 @@ import { Route, Routes } from "react-router-dom";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Registration from "../pages/Registration";
-import ImportDynamicPage from "../pages/ImportDynamicPage";
-import UniversalProductsPage from "../pages/UniversalProductsPage";
+import ImportPage from "../pages/ImportPage";
+import ImportProductPage from "../pages/ImportProductPage";
 import Page3 from "../pages/Page3";
 import NotFound404 from "../pages/NotFound404";
 
@@ -15,8 +15,8 @@ const Main = () => {
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
-        <Route path="/importDynamic" element={<ImportDynamicPage />} />
-        <Route path="/universalProducts" element={<UniversalProductsPage />} />
+        <Route path="/import" element={<ImportPage />} />
+        <Route path="/importProduct" element={<ImportProductPage />} />
         <Route path="/page3" element={<Page3 />} />
 
         <Route path="*" element={<NotFound404 />} />

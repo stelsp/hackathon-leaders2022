@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
-  --bg: ${(props) => props.bg || "var(--clr-bg-primary)"};
+  --bg: ${(props) => props.bg || "var(--clr-bg-secondary)"};
   background-color: var(--bg);
 `;
 const Box = styled.div`
