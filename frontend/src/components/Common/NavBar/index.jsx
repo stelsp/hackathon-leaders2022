@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Container from "../../UI/Container";
+import Container from "../../../UI/Container";
 import { NavFooter, NavHeader } from "./style";
 
 const NavBarHeader = () => {
