@@ -6,10 +6,10 @@ import { Wrapper } from "./style";
 
 const Import = () => {
   return (
-    <Container heading="Импорт">
+    <Container heading="IMPORT">
       <Wrapper>
         <ImportTable />
-        <Link to="/importProduct">на страницу с графиком</Link>
+        <Link to="/import_product">на страницу с графиком</Link>
       </Wrapper>
     </Container>
   );

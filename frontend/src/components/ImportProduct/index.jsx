@@ -4,7 +4,7 @@ import ImportProductChart from "../Charts/ImportProductChart";
 
 const ImportProduct = () => {
   return (
-    <Container heading="Импорт выбранный продукт">
+    <Container heading="PRODUCT">
       <ImportProductChart />
     </Container>
   );

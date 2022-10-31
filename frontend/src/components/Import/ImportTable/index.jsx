@@ -6,15 +6,15 @@ import {
 } from "@mui/x-data-grid";
 
 const rows = [
-  { id: 1, col1: "Hello", col2: "World" },
-  { id: 2, col1: "DataGridPro", col2: "is Awesome" },
-  { id: 3, col1: "MUI", col2: "is Amazing" },
+  { id: 1, tnved: "0123456789", name: "Медведи", netto: "1234" },
+  { id: 2, tnved: "0123456789", name: "Белые Медведи", netto: "1234" },
+  { id: 3, tnved: "0123456789", name: "Бесцветные Медведи", netto: "1234" },
 ];
 
 const columns = [
-  { field: "col1", headerName: "Column 1", width: 150 },
-  { field: "col2", headerName: "Column 2", width: 150 },
-  { field: "col3", headerName: "Column 3", width: 150 },
+  { field: "tnved", headerName: "ТН ВЭД", width: 150 },
+  { field: "name", headerName: "Название товара", width: 150 },
+  { field: "netto", headerName: "Объем", width: 150 },
 ];
 
 function CustomToolbar() {

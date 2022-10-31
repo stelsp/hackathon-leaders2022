@@ -6,7 +6,7 @@ const Global = createGlobalStyle`
 
   :root {
     // font
-    --ff-primary: monospace, sans-serif;
+    --ff-primary: 'Roboto', sans-serif;
 
     // colors
     --clr-primary: lightgrey;

@@ -4,10 +4,10 @@ import Sheet from "@mui/joy/Sheet";
 import Typography from "@mui/joy/Typography";
 import TextField from "@mui/joy/TextField";
 import Button from "@mui/joy/Button";
-import { Link as RouterLink } from "react-router-dom";
 import { Container, Link } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
 
-const LoginForm = () => {
+const SignUpForm = () => {
   return (
     <CssVarsProvider>
       <Container maxWidth="xl">
@@ -30,7 +30,7 @@ const LoginForm = () => {
             <Typography level="h4" component="h1">
               <b>Welcome!</b>
             </Typography>
-            <Typography level="body2">Sign in to continue.</Typography>
+            <Typography level="body2">Sign up to continue.</Typography>
           </div>
           <TextField
             name="email"
@@ -44,17 +44,17 @@ const LoginForm = () => {
             placeholder="password"
             label="Password"
           />
-          <Button sx={{ mt: 1 }}>Log in</Button>
+          <Button sx={{ mt: 1 }}>Sign up</Button>
           <Typography
             endDecorator={
-              <Link component={RouterLink} to="/sign_up">
-                Sign up
+              <Link component={RouterLink} to="/login">
+                Sign in
               </Link>
             }
             fontSize="sm"
             sx={{ alignSelf: "center" }}
           >
-            Don&apos;t have an account?
+            Already have login and password?
           </Typography>
         </Sheet>
       </Container>
@@ -62,4 +62,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default SignUpForm;
