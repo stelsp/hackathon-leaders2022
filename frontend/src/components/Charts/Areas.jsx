@@ -1,17 +1,16 @@
 import React, { useRef } from "react";
 import {
-  LineChart,
-  Line,
+  AreaChart,
+  Area,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   Legend,
-  Brush,
 } from "recharts";
 import { useElementSize } from "./useElementSize";
 
-const Lines = ({ data, height = 500, title }) => {
+const Areas = ({ data, height = 500, title }) => {
   const containerRef = useRef();
   const [width] = useElementSize(containerRef);
 
@@ -21,7 +20,7 @@ const Lines = ({ data, height = 500, title }) => {
       className="w-full overflow-hidden bg-white p-4 pl-0 mx-4 rounded-md shadow-md mb-8"
     >
       <h2 className="text-center text-2xl font-bold mb-4">{title}</h2>
-      <LineChart
+      <AreaChart
         width={width}
         height={height}
         data={data}
@@ -35,20 +34,32 @@ const Lines = ({ data, height = 500, title }) => {
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="name" interval={0} angle={-10} dx={0} />
         <YAxis />
-        <Tooltip />
         <Legend />
-        <Brush dataKey="name" height={30} stroke="#8884d8" />
-        <Line
+        <Tooltip />
+        <Area
+          type="monotone"
+          dataKey="uv"
+          stackId="1"
+          stroke="#8884d8"
+          fill="#8884d8"
+        />
+        <Area
           type="monotone"
           dataKey="pv"
-          stroke="#8884d8"
-          activeDot={{ r: 8 }}
+          stackId="1"
+          stroke="#82ca9d"
+          fill="#82ca9d"
         />
-        <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-        <Line type="monotone" dataKey="amt" stroke="red" />
-      </LineChart>
+        <Area
+          type="monotone"
+          dataKey="amt"
+          stackId="1"
+          stroke="#ffc658"
+          fill="#ffc658"
+        />
+      </AreaChart>
     </div>
   );
 };
 
-export default Lines;
+export default Areas;
