@@ -3,16 +3,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --bg-color: hsl(256, 33, 10);
-  --dot-color: hsl(256, 33, 70);
-
-  --dot-size: 1px;
-  --dot-space: 22px;
+* {
+  box-sizing: border-box;
 }
 
 body {
   min-height: 100vh;
+  min-width: 320px;
+  width: 100%;
   font-family: "Raleway", sans-serif;
 
   background-image: radial-gradient(black 0.5px, transparent 0.5px);

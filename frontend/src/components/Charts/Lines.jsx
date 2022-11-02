@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   LineChart,
   Line,
@@ -9,13 +9,16 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import { useElementSize } from "./useElementSize";
 
-const Lines = ({ data }) => {
+const Lines = ({ data, height = 500 }) => {
+  const containerRef = useRef();
+  const [width] = useElementSize(containerRef);
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <div ref={containerRef} style={{ width: "100%", overflow: "hidden" }}>
       <LineChart
-        width={500}
-        height={300}
+        width={width}
+        height={height}
         data={data}
         margin={{
           top: 5,
@@ -37,7 +40,7 @@ const Lines = ({ data }) => {
         />
         <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
       </LineChart>
-    </ResponsiveContainer>
+    </div>
   );
 };
 

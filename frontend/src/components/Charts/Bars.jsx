@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import {
   BarChart,
   Bar,
@@ -7,18 +7,20 @@ import {
   CartesianGrid,
   Tooltip,
   Legend,
-  ResponsiveContainer,
 } from "recharts";
+import { useElementSize } from "./useElementSize";
 
-const Bars = ({ data }) => {
+const Bars = ({ data, height = 500 }) => {
+  const containerRef = useRef();
+  const [width] = useElementSize(containerRef);
   return (
-    <ResponsiveContainer width="100%" height="100%">
+    <div ref={containerRef} style={{ width: "100%", overflow: "hidden" }}>
       <BarChart
-        width={500}
-        height={300}
+        width={width}
+        height={height}
         data={data}
         margin={{
-          top: 20,
+          top: 5,
           right: 30,
           left: 20,
           bottom: 5,
@@ -29,10 +31,10 @@ const Bars = ({ data }) => {
         <YAxis />
         <Tooltip />
         <Legend />
-        <Bar dataKey="pv" stackId="a" fill="#8884d8" />
-        <Bar dataKey="uv" stackId="a" fill="#82ca9d" />
+        <Bar dataKey="pv" fill="#8884d8" />
+        <Bar dataKey="uv" fill="#82ca9d" />
       </BarChart>
-    </ResponsiveContainer>
+    </div>
   );
 };
 
