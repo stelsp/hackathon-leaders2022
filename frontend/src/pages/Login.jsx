@@ -2,7 +2,11 @@ import React from "react";
 import LoginForm from "../components/Forms/LoginForm";
 
 const Login = () => {
-  return <LoginForm />;
+  return (
+    <main className="py-8">
+      <LoginForm />
+    </main>
+  );
 };
 
 export default Login;

@@ -1,7 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700;800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --bg-color: hsl(256, 33, 10);
+  --dot-color: hsl(256, 33, 70);
+
+  --dot-size: 1px;
+  --dot-space: 22px;
+}
+
 body {
-  min-width: 320px;
+  min-height: 100vh;
+  font-family: "Raleway", sans-serif;
+
+  background-image: radial-gradient(black 0.5px, transparent 0.5px);
+  background-size: 10px 10px;
 }
