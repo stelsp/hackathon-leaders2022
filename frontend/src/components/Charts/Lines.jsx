@@ -12,18 +12,22 @@ import {
 } from "recharts";
 import { useElementSize } from "./useElementSize";
 
-const Lines = ({ data, height = 500 }) => {
+const Lines = ({ data, height = 500, title }) => {
   const containerRef = useRef();
   const [width] = useElementSize(containerRef);
   return (
-    <div ref={containerRef} style={{ width: "100%", overflow: "hidden" }}>
+    <div
+      ref={containerRef}
+      className="w-full overflow-hidden bg-white p-4 pl-0 mx-4 rounded-md shadow-md mb-8"
+    >
+      <h2 className="text-center text-2xl font-bold mb-4">{title}</h2>
       <LineChart
         width={width}
         height={height}
         data={data}
         margin={{
           top: 5,
-          right: 30,
+          right: 40,
           left: 20,
           bottom: 5,
         }}

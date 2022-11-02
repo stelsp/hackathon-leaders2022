@@ -36,11 +36,11 @@ const App = () => {
       <aside
         className={
           showed
-            ? "px-11 absolute z-10 bg-sky-200 transition ease-in-out delay-150"
+            ? "px-11 absolute top-5 left-5 rounded-md z-10 bg-sky-200 transition ease-in-out delay-150"
             : "px-11 absolute z-10 bg-sky-200 opacity-0 hidden transition ease-in-out delay-150"
         }
       >
-        <nav className="pt-16 flex flex-col min-h-screen gap-8 text-gray-100">
+        <nav className="py-10 flex flex-col gap-8 text-gray-100">
           <Link onClick={handleClose} to="/comparison">
             Главная
           </Link>
@@ -57,11 +57,12 @@ const App = () => {
       </aside>
       <div
         onClick={showed ? handleClose : handleOpen}
-        className={
-          showed
-            ? "absolute z-20 top-2 left-2 w-8 h-8 p-2 flex items-center justify-center text-sky-100 text-bold text-lg bg-gray-100 rounded-full transition ease-in-out delay-150 hover:scale-105 cursor-pointer active:scale-110"
-            : "absolute z-20 top-2 left-2 w-8 h-8 p-2 flex items-center justify-center text-gray-100 text-bold text-lg bg-sky-100 rounded-full transition ease-in-out delay-150 hover:scale-105 cursor-pointer active:scale-110"
-        }
+        className="absolute z-20 top-2 left-2 w-8 h-8 p-2 flex items-center justify-center text-gray-100 text-bold text-lg bg-sky-100 rounded-full transition ease-in-out delay-150 hover:scale-105 cursor-pointer active:scale-110"
+        // className={
+        //   showed
+        //     ? "absolute z-20 top-2 left-2 w-8 h-8 p-2 flex items-center justify-center text-sky-100 text-bold text-lg bg-gray-100 rounded-full transition ease-in-out delay-150 hover:scale-105 cursor-pointer active:scale-110"
+        //     : "absolute z-20 top-2 left-2 w-8 h-8 p-2 flex items-center justify-center text-gray-100 text-bold text-lg bg-sky-100 rounded-full transition ease-in-out delay-150 hover:scale-105 cursor-pointer active:scale-110"
+        // }
       >
         T
       </div>
