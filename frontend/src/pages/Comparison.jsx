@@ -8,7 +8,7 @@ const Comparison = () => {
   return (
     <main className="pt-16 flex flex-col gap-8">
       <h2 className="text-center text-4xl font-bold">Main Page</h2>
-      <div className="flex">
+      <div className="flex gap-8">
         <div className="w-full flex flex-col gap-2">
           <h2 className="text-center text-2xl font-bold">Импорт</h2>
           <Lines data={data} height={300} />

@@ -8,6 +8,7 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
+  Brush,
 } from "recharts";
 import { useElementSize } from "./useElementSize";
 
@@ -32,6 +33,7 @@ const Lines = ({ data, height = 500 }) => {
         <YAxis />
         <Tooltip />
         <Legend />
+        <Brush dataKey="name" height={30} stroke="#8884d8" />
         <Line
           type="monotone"
           dataKey="pv"
