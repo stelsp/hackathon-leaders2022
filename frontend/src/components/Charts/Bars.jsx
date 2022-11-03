@@ -27,20 +27,20 @@ const Bars = ({ data, height = 500, title }) => {
         data={data}
         margin={{
           top: 5,
-          right: 40,
+          right: 20,
           left: 20,
           bottom: 5,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" interval={0} angle={-10} dx={0} />
-        <YAxis />
+        <XAxis dataKey="nastranapr" />
+        <YAxis yAxisId="left" orientation="left" stroke="#8884d8" />
+        <YAxis yAxisId="right" orientation="right" stroke="#82ca9d" />
         <Tooltip />
         <Legend />
+        <Bar yAxisId="left" dataKey="Stoim" fill="#8884d8" />
+        <Bar yAxisId="right" dataKey="Netto" fill="#82ca9d" />
         <Brush dataKey="name" height={30} stroke="#8884d8" />
-        <Bar dataKey="pv" fill="#8884d8" />
-        <Bar dataKey="uv" fill="#82ca9d" />
-        <Bar dataKey="amt" fill="coral" />
       </BarChart>
     </div>
   );

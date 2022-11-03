@@ -1,25 +1,12 @@
 import * as React from "react";
 import { DataGrid, GridToolbar } from "@mui/x-data-grid";
 
+import { data } from "../../store/mockDB.json";
+
 const columns = [
-  { field: "id", headerName: "ID", width: 70 },
-  { field: "firstName", headerName: "First name", width: 130 },
-  { field: "lastName", headerName: "Last name", width: 130 },
-  {
-    field: "age",
-    headerName: "Age",
-    type: "number",
-    width: 90,
-  },
-  {
-    field: "fullName",
-    headerName: "Full name",
-    description: "This column has a value getter and is not sortable.",
-    sortable: false,
-    width: 160,
-    valueGetter: (params) =>
-      `${params.row.firstName || ""} ${params.row.lastName || ""}`,
-  },
+  // { field: "tnved", headerName: "ID", width: 300 },
+  { field: "tnved", headerName: "ТН ВЕД", width: 300 },
+  { field: "name", headerName: "Наименование", width: 300 },
 ];
 
 const rows = [
@@ -38,7 +25,7 @@ const Table = () => {
   return (
     <div className="bg-white h-96 shadow-md">
       <DataGrid
-        rows={rows}
+        rows={data}
         columns={columns}
         pageSize={5}
         rowsPerPageOptions={[5]}

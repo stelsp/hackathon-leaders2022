@@ -27,25 +27,31 @@ const Lines = ({ data, height = 500, title }) => {
         data={data}
         margin={{
           top: 5,
-          right: 40,
+          right: 20,
           left: 20,
           bottom: 5,
         }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="name" interval={0} angle={-10} dx={0} />
-        <YAxis />
+        <XAxis dataKey="period" />
+        <YAxis yAxisId="left" stroke="#8884d8" />
+        <YAxis yAxisId="right" orientation="right" stroke="#82ca9d" />
         <Tooltip />
         <Legend />
-        <Brush dataKey="name" height={30} stroke="#8884d8" />
         <Line
+          yAxisId="left"
           type="monotone"
-          dataKey="pv"
+          dataKey="Stoim"
           stroke="#8884d8"
           activeDot={{ r: 8 }}
         />
-        <Line type="monotone" dataKey="uv" stroke="#82ca9d" />
-        <Line type="monotone" dataKey="amt" stroke="red" />
+        <Line
+          yAxisId="right"
+          type="monotone"
+          dataKey="Netto"
+          stroke="#82ca9d"
+        />
+        <Brush dataKey="name" height={30} stroke="#8884d8" />;
       </LineChart>
     </div>
   );
