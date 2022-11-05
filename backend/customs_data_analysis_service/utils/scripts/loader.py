@@ -10,12 +10,8 @@ from utils.scripts.refbooks_loader import upload_operations
 
 logger = logging.getLogger(__name__)
 
-dates = ["апрель 2019 г."]
-district = ["ЦЕНТРАЛЬНЫЙ ФЕДЕРАЛЬНЫЙ ОКРУГ"]
-region = ["46000"]
-
 prefs = {
-    'download.default_directory': f'{os.path.dirname(os.path.realpath(__file__))}/refbooks',
+    'download.default_directory': f'{os.path.dirname(os.path.realpath(__file__))}/downloads',
     'safebrowsing.disable_download_protection': True,
     'download.prompt_for_download': False,
     'download.directory_upgrade': True,
@@ -46,6 +42,11 @@ def main(directory):
     unzip_file(directory)
     upload_operations(directory)
     clear_folder_after_work(directory)
+
+
+dates = ["апрель 2019 г."]
+district = ["ЦЕНТРАЛЬНЫЙ ФЕДЕРАЛЬНЫЙ ОКРУГ"]
+region = ["46000"]
 
 
 def run():

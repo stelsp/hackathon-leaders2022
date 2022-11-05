@@ -1,10 +1,8 @@
 import csv
-from datetime import datetime
+import os
 
 from os import listdir
 from os.path import isfile, join
-
-from customs_data_analysis_service.settings import BASE_DIR
 from data.models import DepartureCountry, DistrictDestination, Direction, RegionDestination, \
     MeasurementUnit, TradeCode, Operation
 
@@ -76,8 +74,8 @@ def upload_tradecode(directory):
                 for row in reader:
                     if row[1] == "NAME":
                         continue
-                    if len(row[1]) == 10:
-                        TradeCode.objects.get_or_create(code=row[1], product=row[2])
+                    if len(row[0]) == 10:
+                        TradeCode.objects.get_or_create(code=row[0], product=row[1])
             break
 
 
@@ -112,10 +110,25 @@ def upload_operations(directory):
             break
 
 
+def upload_risk_countries(directory):
+    files = [f for f in listdir(directory) if isfile(join(directory, f))]
+    for file in files:
+        if file == "bad_countries.csv":
+            with open(directory + "/" + file, 'r') as csv_file:
+                reader = csv.reader(csv_file, delimiter=',')
+                for row in reader:
+                    if row[1] == "NAME":
+                        continue
+                    country = DepartureCountry.objects.filter(code=row[0]).first()
+                    country.have_risk = True
+                    country.save()
+
+
 def run():
-    directory = str(BASE_DIR) + "/utils/downloads"
+    directory = os.path.dirname(os.path.realpath(__file__)) + "/refbooks"
     upload_directions()
     upload_countries(directory)
+    upload_risk_countries(directory)
     upload_districts(directory)
     upload_regions(directory)
     upload_measurement_units(directory)

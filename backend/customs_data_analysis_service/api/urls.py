@@ -1,15 +1,10 @@
-from django.urls import include, path
-from rest_framework.routers import DefaultRouter
+from django.urls import re_path
 
-# from customs_data_analysis_service.data.views import ProductsViewSet, ProductViewSet, HomeViewSet
-
-router_v1 = DefaultRouter()
-
-# router_v1.register('', HomeViewSet, basename='home')
-# router_v1.register('products', ProductsViewSet, basename='products')
-# router_v1.register('product', ProductViewSet, basename='product')
+from api.views import HomeView, ProductsView, ProductView
 
 
 urlpatterns = [
-    path('', include(router_v1.urls)),
+    re_path(r'^home/$', HomeView.as_view(), name="home"),
+    re_path(r'^product/$', ProductView.as_view(), name="product"),
+    re_path(r'^products/$', ProductsView.as_view(), name="products"),
 ]

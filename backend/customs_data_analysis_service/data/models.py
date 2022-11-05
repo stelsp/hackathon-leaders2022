@@ -5,6 +5,7 @@ from django.db import models
 class DepartureCountry(models.Model):
     code = models.CharField("Сокращенный код", max_length=5)
     name = models.CharField("Страна", max_length=50)
+    have_risk = models.BooleanField(default=False)
 
     class Meta:
         ordering = ('name',)
