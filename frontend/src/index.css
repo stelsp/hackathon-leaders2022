@@ -13,6 +13,5 @@ body {
   width: 100%;
   font-family: "Raleway", sans-serif;
 
-  background-image: radial-gradient(black 0.5px, transparent 0.5px);
-  background-size: 10px 10px;
+  background: #f8f8f8;
 }

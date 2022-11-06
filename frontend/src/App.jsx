@@ -10,17 +10,18 @@ const App = () => {
 
   return (
     <div className="overflow-hidden">
-      <header className="py-4 flex items-center bg-white border-b-2 border-sky-100 ">
+      <header className="py-4 flex items-center bg-white border-b-2 border-sky-100">
         <div className="relative flex items-center justify-between container mx-auto ">
           <nav className="flex gap-8 text-sky-100 font-bold">
-            <Link to="/comparison">Главная</Link>
-            <Link to="/product">Продукт</Link>
+            <Link to="/home">Поиск</Link>
+            <Link to="/comparison/volume">Объем торгов</Link>
+            <Link to="/comparison/balance">Торговый баланс</Link>
           </nav>
           <nav
             className={
               show
                 ? "absolute z-10 top-5 right-5 p-4 flex flex-col gap-4 rounded-md shadow-md bg-sky-200 text-gray-100 font-bold transition ease-in-out delay-150 animate"
-                : "absolute z-10 top-5 right-5  flex flex-col gap-4 rounded-md shadow-md bg-sky-200 text-gray-100 font-bold transition ease-in-out delay-150 opacity-0 translate-x-[50%] translate-y-[-50%] w-0 h-0"
+                : "absolute z-10 top-5 right-5 flex flex-col gap-4 rounded-md shadow-md bg-sky-200 text-gray-100 font-bold transition ease-in-out delay-150 opacity-0 translate-x-[50%] translate-y-[-50%] w-0 h-0"
             }
           >
             <Link

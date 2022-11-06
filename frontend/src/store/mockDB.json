@@ -1,9 +1,13 @@
 {
-  "data": [
+  "TradingVolume": [
     {
-      "id": "0101210000",
-      "tnved": "0101210000",
-      "name": "0101210000",
+      "id": "1",
+      "name": "НАЗВАНИЕ 1",
+      "tnved": "0101210001",
+      "ImportStoimAll": 10000,
+      "ImportNettoAll": 11000,
+      "ExportStoimAll": 12000,
+      "ExportNettoAll": 13000,
       "napr": {
         "export": {
           "barChart": [
@@ -11,63 +15,13 @@
               "nastranapr": "BE",
               "Stoim": 10000.0,
               "Netto": 2100.0
-            },
-            {
-              "nastranapr": "PL",
-              "Stoim": 8110.73,
-              "Netto": 2000.0
-            },
-            {
-              "nastranapr": "NL",
-              "Stoim": 11200.0,
-              "Netto": 1840.0
-            },
-            {
-              "nastranapr": "EE",
-              "Stoim": 1829.7,
-              "Netto": 650.0
-            },
-            {
-              "nastranapr": "GB",
-              "Stoim": 2255.89,
-              "Netto": 600.0
             }
           ],
           "lineChart": [
             {
-              "period": "2021-04",
-              "Stoim": 1626.48,
-              "Netto": 500.0
-            },
-            {
-              "period": "2021-05",
-              "Stoim": 1829.7,
-              "Netto": 650.0
-            },
-            {
-              "period": "2021-06",
-              "Stoim": 2255.89,
-              "Netto": 600.0
-            },
-            {
-              "period": "2021-07",
-              "Stoim": 10000.0,
-              "Netto": 2100.0
-            },
-            {
-              "period": "2021-09",
-              "Stoim": 2191.51,
-              "Netto": 500.0
-            },
-            {
-              "period": "2021-10",
-              "Stoim": 4292.74,
-              "Netto": 1000.0
-            },
-            {
-              "period": "2021-11",
-              "Stoim": 11200.0,
-              "Netto": 1840.0
+              "period": "2021-01",
+              "Stoim": 44800.0,
+              "Netto": 1500.0
             }
           ]
         },
@@ -77,31 +31,6 @@
               "nastranapr": "US",
               "Stoim": 997939.09,
               "Netto": 27420.0
-            },
-            {
-              "nastranapr": "FR",
-              "Stoim": 258266.73,
-              "Netto": 4120.0
-            },
-            {
-              "nastranapr": "SE",
-              "Stoim": 27312.43,
-              "Netto": 3210.0
-            },
-            {
-              "nastranapr": "IT",
-              "Stoim": 6580.58,
-              "Netto": 1200.0
-            },
-            {
-              "nastranapr": "LV",
-              "Stoim": 2425.22,
-              "Netto": 580.0
-            },
-            {
-              "nastranapr": "EE",
-              "Stoim": 2456.69,
-              "Netto": 380.0
             }
           ],
           "lineChart": [
@@ -109,519 +38,50 @@
               "period": "2021-01",
               "Stoim": 44800.0,
               "Netto": 1500.0
-            },
-            {
-              "period": "2021-02",
-              "Stoim": 12361.38,
-              "Netto": 2800.0
-            },
-            {
-              "period": "2021-03",
-              "Stoim": 29956.4,
-              "Netto": 3800.0
-            },
-            {
-              "period": "2021-06",
-              "Stoim": 82966.84,
-              "Netto": 400.0
-            },
-            {
-              "period": "2021-07",
-              "Stoim": 5937.5,
-              "Netto": 1300.0
-            },
-            {
-              "period": "2021-08",
-              "Stoim": 103675.6,
-              "Netto": 2950.0
-            },
-            {
-              "period": "2021-10",
-              "Stoim": 55896.61,
-              "Netto": 1100.0
-            },
-            {
-              "period": "2021-11",
-              "Stoim": 756013.34,
-              "Netto": 15850.0
-            },
-            {
-              "period": "2021-12",
-              "Stoim": 203373.07,
-              "Netto": 7210.0
             }
           ]
         }
       }
-    },
+    }
+  ],
+  "TradeBalance": [
     {
-      "id": "3506100000",
-      "tnved": "3506100000",
-      "name": "3506100000",
+      "id": "1",
+      "name": "НАЗВАНИЕ 1",
+      "tnved": "0101210001",
+      "ImportNettoAll": 11000,
+      "ExportNettoAll": 13000,
+      "balance": 24000,
       "napr": {
-        "import": {
+        "export": {
           "barChart": [
             {
-              "nastranapr": "PL",
-              "Stoim": 12754356.62,
-              "Netto": 3295629.76
-            },
+              "nastranapr": "BE",
+              "Stoim": 10000.0,
+              "Netto": 2100.0
+            }
+          ],
+          "lineChart": [
             {
-              "nastranapr": "NL",
-              "Stoim": 6540901.6,
-              "Netto": 2230950.54
-            },
-            {
-              "nastranapr": "DE",
-              "Stoim": 7640805.41,
-              "Netto": 990296.27
-            },
-            {
-              "nastranapr": "CN",
-              "Stoim": 4074368.17,
-              "Netto": 975366.76
-            },
-            {
-              "nastranapr": "KR",
-              "Stoim": 6582451.37,
-              "Netto": 811233.56
-            },
+              "period": "2021-01",
+              "Stoim": 1626.48,
+              "Netto": 500.0
+            }
+          ]
+        },
+        "import": {
+          "barChart": [
             {
               "nastranapr": "US",
-              "Stoim": 3177447.4,
-              "Netto": 551390.97
-            },
-            {
-              "nastranapr": "GB",
-              "Stoim": 1656898.21,
-              "Netto": 243990.66
-            },
-            {
-              "nastranapr": "EE",
-              "Stoim": 520412.21,
-              "Netto": 145851.32
-            },
-            {
-              "nastranapr": "IE",
-              "Stoim": 3633266.88,
-              "Netto": 114247.69
-            },
-            {
-              "nastranapr": "FR",
-              "Stoim": 696689.23,
-              "Netto": 107578.32
+              "Stoim": 997939.09,
+              "Netto": 27420.0
             }
           ],
           "lineChart": [
             {
               "period": "2021-01",
-              "Stoim": 3400761.23,
-              "Netto": 678572.81
-            },
-            {
-              "period": "2021-02",
-              "Stoim": 3507470.08,
-              "Netto": 825981.5
-            },
-            {
-              "period": "2021-03",
-              "Stoim": 3801910.04,
-              "Netto": 839183.86
-            },
-            {
-              "period": "2021-04",
-              "Stoim": 4524222.58,
-              "Netto": 888757.54
-            },
-            {
-              "period": "2021-05",
-              "Stoim": 4754505.91,
-              "Netto": 918222.0
-            },
-            {
-              "period": "2021-06",
-              "Stoim": 4894807.32,
-              "Netto": 827534.19
-            },
-            {
-              "period": "2021-07",
-              "Stoim": 4386758.21,
-              "Netto": 945713.27
-            },
-            {
-              "period": "2021-08",
-              "Stoim": 3974528.37,
-              "Netto": 775539.36
-            },
-            {
-              "period": "2021-09",
-              "Stoim": 4255965.12,
-              "Netto": 791071.67
-            },
-            {
-              "period": "2021-10",
-              "Stoim": 5060199.27,
-              "Netto": 981146.69
-            },
-            {
-              "period": "2021-11",
-              "Stoim": 4134084.93,
-              "Netto": 819621.77
-            },
-            {
-              "period": "2021-12",
-              "Stoim": 4505492.91,
-              "Netto": 818165.55
-            }
-          ]
-        },
-        "export": {
-          "barChart": [
-            {
-              "nastranapr": "KZ",
-              "Stoim": 4366009.48,
-              "Netto": 1857352.39
-            },
-            {
-              "nastranapr": "BY",
-              "Stoim": 2603877.98,
-              "Netto": 410430.34
-            },
-            {
-              "nastranapr": "AZ",
-              "Stoim": 596197.02,
-              "Netto": 252170.52
-            },
-            {
-              "nastranapr": "UA",
-              "Stoim": 801109.42,
-              "Netto": 247193.68
-            },
-            {
-              "nastranapr": "EE",
-              "Stoim": 558118.2,
-              "Netto": 153403.08
-            },
-            {
-              "nastranapr": "GE",
-              "Stoim": 263440.49,
-              "Netto": 96856.92
-            },
-            {
-              "nastranapr": "OS",
-              "Stoim": 70220.55,
-              "Netto": 63926.69
-            },
-            {
-              "nastranapr": "AM",
-              "Stoim": 236042.83,
-              "Netto": 41174.62
-            },
-            {
-              "nastranapr": "KG",
-              "Stoim": 96227.74,
-              "Netto": 18621.85
-            },
-            {
-              "nastranapr": "LV",
-              "Stoim": 71184.17,
-              "Netto": 13329.38
-            }
-          ],
-          "lineChart": [
-            {
-              "period": "2021-01",
-              "Stoim": 353281.03,
-              "Netto": 86383.52
-            },
-            {
-              "period": "2021-02",
-              "Stoim": 891423.02,
-              "Netto": 293780.66
-            },
-            {
-              "period": "2021-03",
-              "Stoim": 775745.42,
-              "Netto": 225816.51
-            },
-            {
-              "period": "2021-04",
-              "Stoim": 836806.11,
-              "Netto": 260343.69
-            },
-            {
-              "period": "2021-05",
-              "Stoim": 985196.36,
-              "Netto": 347888.06
-            },
-            {
-              "period": "2021-06",
-              "Stoim": 1238256.98,
-              "Netto": 393371.69
-            },
-            {
-              "period": "2021-07",
-              "Stoim": 1234690.99,
-              "Netto": 399173.57
-            },
-            {
-              "period": "2021-08",
-              "Stoim": 759058.11,
-              "Netto": 226428.92
-            },
-            {
-              "period": "2021-09",
-              "Stoim": 1206939.22,
-              "Netto": 397978.05
-            },
-            {
-              "period": "2021-10",
-              "Stoim": 596989.58,
-              "Netto": 164613.24
-            },
-            {
-              "period": "2021-11",
-              "Stoim": 522515.34,
-              "Netto": 151754.91
-            },
-            {
-              "period": "2021-12",
-              "Stoim": 521918.3,
-              "Netto": 247401.55
-            }
-          ]
-        }
-      }
-    },
-    {
-      "id": "8414308106",
-      "tnved": "8414308106",
-      "name": "8414308106",
-      "napr": {
-        "import": {
-          "barChart": [
-            {
-              "nastranapr": "SK",
-              "Stoim": 9896446.18,
-              "Netto": 2264745.61
-            },
-            {
-              "nastranapr": "CN",
-              "Stoim": 817512.49,
-              "Netto": 134038.17
-            },
-            {
-              "nastranapr": "BR",
-              "Stoim": 396479.96,
-              "Netto": 76859.21
-            },
-            {
-              "nastranapr": "FR",
-              "Stoim": 301790.55,
-              "Netto": 47746.34
-            },
-            {
-              "nastranapr": "IN",
-              "Stoim": 108583.0,
-              "Netto": 14773.5
-            },
-            {
-              "nastranapr": "DE",
-              "Stoim": 28460.31,
-              "Netto": 3161.45
-            },
-            {
-              "nastranapr": "KR",
-              "Stoim": 42358.18,
-              "Netto": 1611.97
-            },
-            {
-              "nastranapr": "MX",
-              "Stoim": 50328.21,
-              "Netto": 1460.5
-            },
-            {
-              "nastranapr": "BY",
-              "Stoim": 1815.94,
-              "Netto": 970.87
-            },
-            {
-              "nastranapr": "ES",
-              "Stoim": 4696.64,
-              "Netto": 842.2
-            }
-          ],
-          "lineChart": [
-            {
-              "period": "2021-01",
-              "Stoim": 785895.02,
-              "Netto": 177919.29
-            },
-            {
-              "period": "2021-02",
-              "Stoim": 772094.37,
-              "Netto": 164009.06
-            },
-            {
-              "period": "2021-03",
-              "Stoim": 889244.31,
-              "Netto": 192996.76
-            },
-            {
-              "period": "2021-04",
-              "Stoim": 864091.04,
-              "Netto": 189457.52
-            },
-            {
-              "period": "2021-05",
-              "Stoim": 1113544.67,
-              "Netto": 237982.05
-            },
-            {
-              "period": "2021-06",
-              "Stoim": 1504205.28,
-              "Netto": 326105.12
-            },
-            {
-              "period": "2021-07",
-              "Stoim": 1601799.33,
-              "Netto": 343303.64
-            },
-            {
-              "period": "2021-08",
-              "Stoim": 828077.87,
-              "Netto": 177708.12
-            },
-            {
-              "period": "2021-09",
-              "Stoim": 780089.01,
-              "Netto": 166591.21
-            },
-            {
-              "period": "2021-10",
-              "Stoim": 963605.44,
-              "Netto": 219837.96
-            },
-            {
-              "period": "2021-11",
-              "Stoim": 912523.53,
-              "Netto": 197194.95
-            },
-            {
-              "period": "2021-12",
-              "Stoim": 724936.88,
-              "Netto": 155407.77
-            }
-          ]
-        },
-        "export": {
-          "barChart": [
-            {
-              "nastranapr": "UZ",
-              "Stoim": 254772.24,
-              "Netto": 52930.5
-            },
-            {
-              "nastranapr": "BY",
-              "Stoim": 96956.32,
-              "Netto": 12943.3
-            },
-            {
-              "nastranapr": "KZ",
-              "Stoim": 67689.46,
-              "Netto": 8009.06
-            },
-            {
-              "nastranapr": "AM",
-              "Stoim": 21579.63,
-              "Netto": 2772.2
-            },
-            {
-              "nastranapr": "AZ",
-              "Stoim": 7713.39,
-              "Netto": 763.98
-            },
-            {
-              "nastranapr": "UA",
-              "Stoim": 3247.33,
-              "Netto": 176.66
-            },
-            {
-              "nastranapr": "GE",
-              "Stoim": 497.08,
-              "Netto": 27.0
-            },
-            {
-              "nastranapr": "CY",
-              "Stoim": 464.2,
-              "Netto": 20.0
-            },
-            {
-              "nastranapr": "DE",
-              "Stoim": 194.49,
-              "Netto": 12.0
-            }
-          ],
-          "lineChart": [
-            {
-              "period": "2021-01",
-              "Stoim": 5657.21,
-              "Netto": 753.24
-            },
-            {
-              "period": "2021-02",
-              "Stoim": 37130.39,
-              "Netto": 7252.88
-            },
-            {
-              "period": "2021-03",
-              "Stoim": 36160.76,
-              "Netto": 7314.68
-            },
-            {
-              "period": "2021-04",
-              "Stoim": 75032.85,
-              "Netto": 15098.66
-            },
-            {
-              "period": "2021-05",
-              "Stoim": 3815.08,
-              "Netto": 235.37
-            },
-            {
-              "period": "2021-06",
-              "Stoim": 105471.0,
-              "Netto": 18032.82
-            },
-            {
-              "period": "2021-07",
-              "Stoim": 22544.61,
-              "Netto": 2652.84
-            },
-            {
-              "period": "2021-08",
-              "Stoim": 17694.73,
-              "Netto": 2232.53
-            },
-            {
-              "period": "2021-09",
-              "Stoim": 5691.72,
-              "Netto": 255.28
-            },
-            {
-              "period": "2021-10",
-              "Stoim": 25711.17,
-              "Netto": 3325.54
-            },
-            {
-              "period": "2021-11",
-              "Stoim": 27822.31,
-              "Netto": 5242.48
-            },
-            {
-              "period": "2021-12",
-              "Stoim": 90382.31,
-              "Netto": 15258.38
+              "Stoim": 44800.0,
+              "Netto": 1500.0
             }
           ]
         }
