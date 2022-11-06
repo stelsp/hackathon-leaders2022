@@ -1,0 +1,40 @@
+services:
+  db:
+    image: postgres:13.3-alpine
+    restart: always
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    env_file:
+      - .env
+
+  backend:
+    build: ./backend
+    restart: always
+    volumes:
+      - ./backend:/app
+      - media_value:/app/media/
+      - static_value:/app/static/
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    env_file:
+    - .env
+
+#  frontend:
+#    build: ./frontend
+#    restart: always
+#    volumes:
+#      - media_value:/app/media/
+#      - static_value:/app/static/
+#    ports:
+#      - "7000:7000"
+#    depends_on:
+#      - db
+#    env_file:
+#      - .env
+
+volumes:
+  postgres_data:
+  media_value:
+  static_value:

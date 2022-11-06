@@ -18,6 +18,9 @@ class FCSScraper:
         self.preferences = preferences
         if self.preferences:
             self._options.add_experimental_option('prefs', preferences)
+            self._options.add_argument('--disable-gpu')
+            self._options.add_argument('--headless')
+            self._options.add_argument('--no-sandbox')
         self._driver_dir = os.path.dirname(os.path.realpath(__file__)) + "/driver/chromedriver"
         self._service = Service(self._driver_dir)
         self.driver = webdriver.Chrome(options=self._options, service=self._service)

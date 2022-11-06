@@ -48,20 +48,6 @@ class TradeCode(models.Model):
         return f"{self.code} - {self.product}"
 
 
-class RegionDestination(models.Model):
-    code = models.CharField("Код региона", max_length=10)
-    name = models.CharField("Группа товаров", max_length=100)
-    district = models.CharField("Округ", max_length=100)
-
-    class Meta:
-        ordering = ('code',)
-        verbose_name = "Регион импорта"
-        verbose_name_plural = "Регионы импорта"
-
-    def __str__(self):
-        return self.name
-
-
 class DistrictDestination(models.Model):
     code = models.CharField("Код", max_length=10)
     name = models.CharField("Название", max_length=100)
@@ -70,6 +56,22 @@ class DistrictDestination(models.Model):
         ordering = ('code',)
         verbose_name = "Округ"
         verbose_name_plural = "Округи"
+
+    def __str__(self):
+        return self.name
+
+
+class RegionDestination(models.Model):
+    code = models.CharField("Код региона", max_length=10)
+    name = models.CharField("Группа товаров", max_length=100)
+    district = models.ForeignKey(
+        DistrictDestination, on_delete=models.CASCADE, related_name="region", verbose_name="Округ"
+    )
+
+    class Meta:
+        ordering = ('code',)
+        verbose_name = "Регион импорта"
+        verbose_name_plural = "Регионы импорта"
 
     def __str__(self):
         return self.name
