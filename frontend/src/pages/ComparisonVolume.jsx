@@ -60,7 +60,9 @@ const ComparisonVolume = () => {
           <TableVolume handleRowClick={handleRowClick} />
         </div>
       </div>
-      <h3 className="text-center text-2xl font-bold">По выделенному товару</h3>
+      <h3 className="text-center text-2xl font-bold">
+        По выделенному товару (по всем странам)
+      </h3>
       <div className="grid grid-cols-2 gap-6">
         <Lines
           data={volumeItem && volumeItem.napr.import.lineChart}

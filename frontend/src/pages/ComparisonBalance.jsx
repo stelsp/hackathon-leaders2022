@@ -48,7 +48,9 @@ const ComparisonBalance = () => {
           <TableBalance handleRowClick={handleRowClick} />
         </div>
       </div>
-      <h2 className="text-center text-2xl font-bold">По выделенному товару</h2>
+      <h2 className="text-center text-2xl font-bold">
+        По выделенному товару (по всем странам)
+      </h2>
       <div className="grid grid-cols-2 gap-6">
         <Lines
           data={balanceItem && balanceItem.napr.import.lineChart}
