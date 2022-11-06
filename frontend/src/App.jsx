@@ -9,7 +9,7 @@ const App = () => {
   };
 
   return (
-    <div className="overflow-hidden h-full bg-secondary-BGLT">
+    <div className="overflow-hidden min-h-screen bg-secondary-BGLT">
       <header className="py-4 flex items-center  border-b-2 bg-base-white border-main-middle3C">
         <div className="relative flex items-center justify-between container mx-auto">
           <div className="flex items-center gap-16">

@@ -25,6 +25,8 @@ const SearchForm = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (data) => {
+    data.StartDate = start.toJSON();
+    data.EndDate = end.toJSON();
     console.log(data);
   };
 
@@ -96,9 +98,9 @@ const SearchForm = () => {
         </LocalizationProvider>
       </div>
       <Button variant="contained" type="submit">
-        <Link className="w-full h-full" to="/comparison/volume">
+        {/* <Link className="w-full h-full" to="/comparison/volume">
           Показать результаты
-        </Link>
+        </Link> */}
       </Button>
     </form>
   );
