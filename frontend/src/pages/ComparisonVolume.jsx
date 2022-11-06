@@ -11,7 +11,7 @@ const ComparisonVolume = () => {
   const [volumeItem, setVolumeItem] = useState(TradingVolume[0]);
 
   return (
-    <main className="py-10 flex flex-col gap-6">
+    <main className="py-16 flex flex-col gap-6">
       <h2 className="text-center text-2xl font-bold">Объем торгов</h2>
       <div className="flex flex-col gap-6">
         <div className="grid grid-cols-2 gap-6">

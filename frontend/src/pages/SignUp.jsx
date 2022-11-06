@@ -3,7 +3,7 @@ import SignUpForm from "../components/Forms/SignUpForm";
 
 const SignUp = () => {
   return (
-    <main className="pt-16">
+    <main className="py-16">
       <SignUpForm />
     </main>
   );

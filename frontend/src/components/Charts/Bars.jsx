@@ -34,13 +34,13 @@ const Bars = ({ data, height = 500, title, bar1, bar2, x }) => {
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey={x} />
-        <YAxis yAxisId="left" orientation="left" stroke="#8884d8" />
-        <YAxis yAxisId="right" orientation="right" stroke="#82ca9d" />
+        <YAxis yAxisId="left" orientation="left" stroke="#2A3958" />
+        <YAxis yAxisId="right" orientation="right" stroke="#D71827" />
         <Tooltip />
         <Legend />
-        <Bar yAxisId="left" dataKey={bar1} fill="#8884d8" />
-        {bar2 && <Bar yAxisId="right" dataKey={bar2} fill="#82ca9d" />}
-        <Brush dataKey={x} height={30} stroke="#8884d8" />
+        <Bar yAxisId="left" dataKey={bar1} fill="#2A3958" />
+        {bar2 && <Bar yAxisId="right" dataKey={bar2} fill="#D71827" />}
+        <Brush dataKey={x} height={30} stroke="#038CD2" />
       </BarChart>
     </div>
   );

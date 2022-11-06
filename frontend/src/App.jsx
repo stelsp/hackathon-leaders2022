@@ -26,6 +26,13 @@ const App = () => {
           >
             <Link
               onClick={handleToggle}
+              to="/profile"
+              className={!show ? "hidden" : ""}
+            >
+              Профиль
+            </Link>
+            <Link
+              onClick={handleToggle}
               to="/login"
               className={!show ? "hidden" : ""}
             >
@@ -36,7 +43,7 @@ const App = () => {
               to="/sign_up"
               className={!show ? "hidden" : ""}
             >
-              Зарегистрироваться
+              Регистрация
             </Link>
           </nav>
           <div

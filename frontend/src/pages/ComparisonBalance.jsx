@@ -11,7 +11,7 @@ const ComparisonBalance = () => {
   const [balanceItem, setBalanceItem] = useState(TradeBalance[0]);
 
   return (
-    <main className="py-10 flex flex-col gap-6">
+    <main className="py-16 flex flex-col gap-6">
       <h2 className="text-center text-2xl font-bold">Торговый баланс</h2>
       <div className="flex gap-6">
         <div className="min-w-[600px] bg-white rounded-md shadow-md">

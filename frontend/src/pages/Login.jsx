@@ -3,7 +3,7 @@ import LoginForm from "../components/Forms/LoginForm";
 
 const Login = () => {
   return (
-    <main className="pt-16">
+    <main className="py-16">
       <LoginForm />
     </main>
   );

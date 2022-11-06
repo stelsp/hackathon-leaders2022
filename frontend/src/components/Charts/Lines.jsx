@@ -34,24 +34,24 @@ const Lines = ({ data, height = 500, title }) => {
       >
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey="period" />
-        <YAxis yAxisId="left" stroke="#8884d8" />
-        <YAxis yAxisId="right" orientation="right" stroke="#82ca9d" />
+        <YAxis yAxisId="left" stroke="#038CD2" />
+        <YAxis yAxisId="right" orientation="right" stroke="#D71827" />
         <Tooltip />
         <Legend />
         <Line
           yAxisId="left"
           type="monotone"
           dataKey="Stoim"
-          stroke="#8884d8"
+          stroke="#038CD2"
           activeDot={{ r: 8 }}
         />
         <Line
           yAxisId="right"
           type="monotone"
           dataKey="Netto"
-          stroke="#82ca9d"
+          stroke="#D71827"
         />
-        <Brush dataKey="name" height={30} stroke="#8884d8" />;
+        <Brush dataKey="name" height={30} stroke="#038CD2" />;
       </LineChart>
     </div>
   );
