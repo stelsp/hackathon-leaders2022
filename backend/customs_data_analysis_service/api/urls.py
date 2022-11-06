@@ -1,8 +1,8 @@
-from django.urls import include, path
-from rest_framework.routers import DefaultRouter
+from django.urls import re_path
 
-router_v1 = DefaultRouter()
+from api.views import HomeView
+
 
 urlpatterns = [
-    path('', include(router_v1.urls)),
+    re_path(r'^index/$', HomeView.as_view(), name="index"),
 ]

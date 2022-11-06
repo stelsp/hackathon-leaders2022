@@ -2,6 +2,8 @@ import os
 from pathlib import Path
 from dotenv import load_dotenv
 
+VALUE_DISPLAY = '-пусто-'
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -20,7 +22,6 @@ DEBUG = True
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(' ')
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -28,12 +29,14 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
     'rest_framework',
     'rest_framework.authtoken',
     'djoser',
     'users.apps.UsersConfig',
     'data.apps.DataConfig',
     'api.apps.ApiConfig',
+    'utils.apps.UtilsConfig',
     'drf_yasg'
 ]
 
@@ -70,6 +73,17 @@ WSGI_APPLICATION = 'customs_data_analysis_service.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': os.getenv('DB_ENGINE', default='django.db.backends.postgresql'),
+#         'NAME': os.getenv('DB_NAME', default='postgres'),
+#         'USER': os.getenv('POSTGRES_USER', default='postgres'),
+#         'PASSWORD': os.getenv('POSTGRES_PASSWORD', default='postgres'),
+#         'HOST': os.getenv('DB_HOST', default='db'),
+#         'PORT': os.getenv('DB_PORT', default='5432')
+#     }
+# }
 
 DATABASES = {
     'default': {
@@ -120,12 +134,28 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+AUTH_USER_MODEL = 'users.User'
+
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
     ),
     'TEST_REQUEST_DEFAULT_FORMAT': 'json'
+}
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'console': {
+            'class': 'logging.StreamHandler',
+        },
+    },
+    'root': {
+        'handlers': ['console'],
+        'level': 'INFO',
+    },
 }
