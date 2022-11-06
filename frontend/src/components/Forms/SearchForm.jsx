@@ -1,41 +1,101 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import TextField from "@mui/material/TextField";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { DatePicker } from "@mui/x-date-pickers/DatePicker";
+import Button from "@mui/material/Button";
+import dayjs from "dayjs";
+import Autocomplete from "@mui/material/Autocomplete";
+import { Link } from "react-router-dom";
+
+import { region } from "../../store/region.json";
+
+const minDate = dayjs("2019-01-01T00:00:00.000");
+const maxDate = dayjs("2022-01-01T00:00:00.000");
 
 const SearchForm = () => {
+  const [start, setStart] = useState(null);
+  const [end, setEnd] = useState(null);
+  const [subject, setSubject] = useState(false);
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+  };
 
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      className="container max-w-sm mx-auto flex flex-col gap-2"
-    >
-      <div className="p-4 flex flex-col gap-4 rounded-lg shadow-lg  bg-white">
+    <form onSubmit={handleSubmit(onSubmit)} className="max-w-md mx-auto">
+      <div className="p-6 flex flex-col gap-6 rounded-lg shadow-lg bg-white">
         <h3 className="text-center text-xl font-semibold">Поиск</h3>
-
-        <input
-          type="email"
-          placeholder="johndoe@mail.com"
-          {...register("Email", {})}
-          className="p-1 border-2  rounded-md"
+        <Autocomplete
+          disablePortal
+          id="Region"
+          options={region}
+          onChange={(event, value) => {
+            const sub = region.find((el) => el.value === value.value);
+            setSubject(sub);
+          }}
+          renderInput={(params) => (
+            <TextField
+              {...params}
+              label="Федеральный округ"
+              {...register("Region", {})}
+            />
+          )}
         />
-        <input
-          type="password"
-          placeholder="Password"
-          {...register("Password", {})}
-          className="p-1 border-2  rounded-md"
-        />
+        {subject && (
+          <Autocomplete
+            disablePortal
+            id="Subject"
+            options={subject.subject}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                label="Субъект"
+                {...register("Subject", {})}
+              />
+            )}
+          />
+        )}
 
-        <button
-          type="submit"
-          className="py-1 px-2 mt-4 self-end border-2 rounded-md bg-white active:scale-110 "
-        >
-          Отправить
-        </button>
+        <div className="flex gap-6">
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DatePicker
+              minDate={minDate}
+              maxDate={maxDate}
+              label="Начало"
+              value={start}
+              onChange={(newValue) => {
+                setStart(newValue);
+              }}
+              renderInput={(params) => (
+                <TextField {...params} {...register("StartDate", {})} />
+              )}
+            />
+          </LocalizationProvider>
+          <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <DatePicker
+              minDate={minDate}
+              maxDate={maxDate}
+              label="Конец"
+              value={end}
+              onChange={(newValue) => {
+                setEnd(newValue);
+              }}
+              renderInput={(params) => (
+                <TextField {...params} {...register("EndDate", {})} />
+              )}
+            />
+          </LocalizationProvider>
+        </div>
+        <Button variant="contained" type="submit">
+          <Link to="/comparison/volume">Объем торгов</Link>
+        </Button>
       </div>
     </form>
   );

@@ -13,7 +13,7 @@ const App = () => {
       <header className="py-4 flex items-center bg-white border-b-2 border-sky-100">
         <div className="relative flex items-center justify-between container mx-auto ">
           <nav className="flex gap-8 text-sky-100 font-bold">
-            <Link to="/home">Поиск</Link>
+            <Link to="/">Поиск</Link>
             <Link to="/comparison/volume">Объем торгов</Link>
             <Link to="/comparison/balance">Торговый баланс</Link>
           </nav>

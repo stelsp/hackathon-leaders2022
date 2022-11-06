@@ -3,7 +3,7 @@ import SearchForm from "../components/Forms/SearchForm";
 
 const Home = () => {
   return (
-    <div>
+    <div className="py-10">
       <SearchForm />
     </div>
   );
