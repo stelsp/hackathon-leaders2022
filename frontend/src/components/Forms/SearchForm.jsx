@@ -96,7 +96,9 @@ const SearchForm = () => {
         </LocalizationProvider>
       </div>
       <Button variant="contained" type="submit">
-        <Link to="/comparison/volume">Объем торгов</Link>
+        <Link className="w-full h-full" to="/comparison/volume">
+          Найти
+        </Link>
       </Button>
     </form>
   );

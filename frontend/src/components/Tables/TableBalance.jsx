@@ -14,7 +14,7 @@ const columns = [
 
 const TableBalance = () => {
   return (
-    <div className="h-full w-full">
+    <div className="h-96">
       <DataGrid
         rows={TradeBalance}
         columns={columns}

@@ -12,11 +12,12 @@ const App = () => {
     <div className="overflow-hidden">
       <header className="py-4 flex items-center bg-white border-b-2 border-sky-100">
         <div className="relative flex items-center justify-between container mx-auto ">
-          <nav className="flex gap-8 text-sky-100 font-bold">
-            <Link to="/">Поиск</Link>
-            <Link to="/comparison/volume">Объем торгов</Link>
-            <Link to="/comparison/balance">Торговый баланс</Link>
-          </nav>
+          <div className="flex items-center gap-16">
+            <div className="font-extrabold text-3xl text-sky-200">LOGO</div>
+            <nav className="flex gap-8 text-sky-100 font-bold">
+              <Link to="/">Поиск</Link>
+            </nav>
+          </div>
           <nav
             className={
               show

@@ -33,7 +33,9 @@ const LoginForm = () => {
         {...register("Password", {})}
       />
       <Button variant="contained" type="submit">
-        <Link to="/profile">Войти</Link>
+        <Link className="w-full h-full" to="/profile">
+          Войти
+        </Link>
       </Button>
       <Link className="text-center text-blue-100" to="/sign_up">
         Зарегистрироваться

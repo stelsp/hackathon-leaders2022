@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import Bars from "../components/Charts/Bars";
 import Lines from "../components/Charts/Lines";
-import VerticalBars from "../components/Charts/VerticalBars";
 import TableBalance from "../components/Tables/TableBalance";
+import Button from "@mui/material/Button";
 
 import { TradeBalance } from "../store/mockDB.json";
+import { Link } from "react-router-dom";
 
 const ComparisonBalance = () => {
   const [balance] = useState(TradeBalance);
@@ -12,12 +13,39 @@ const ComparisonBalance = () => {
 
   return (
     <main className="py-16 flex flex-col gap-6">
-      <h2 className="text-center text-2xl font-bold">Торговый баланс</h2>
-      <div className="flex gap-6">
-        <div className="min-w-[600px] bg-white rounded-md shadow-md">
+      <div className="mb-10">
+        <h2 className="text-center text-2xl font-bold mb-10">
+          Торговый баланс
+        </h2>
+        <div className="flex items-center justify-between">
+          <div className="flex">
+            <Button variant="contained" type="button">
+              <Link className="w-full h-full" to="/comparison/volume">
+                Объем Торгов
+              </Link>
+            </Button>
+            <Button variant="contained" type="button" color="inherit">
+              <Link className="w-full h-full" to="/comparison/balance">
+                Торговый Баланс
+              </Link>
+            </Button>
+          </div>
+          <Button variant="contained" type="submit">
+            Сохранить
+          </Button>
+        </div>
+      </div>
+      <div className="flex flex-col gap-6">
+        <Bars
+          data={balance}
+          bar1="balance"
+          x="id"
+          height={500}
+          title={"Торговый баланс"}
+        />
+        <div className="bg-white rounded-md shadow-md">
           <TableBalance />
         </div>
-        <Bars data={balance} bar1="balance" x="id" height={500} title={""} />
       </div>
       <h2 className="text-center text-2xl font-bold">По выделенному товару</h2>
       <div className="grid grid-cols-2 gap-6">

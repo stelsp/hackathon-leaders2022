@@ -25,7 +25,9 @@ const Profile = () => {
           </div>
         </div>
         <Button variant="contained" type="button">
-          <Link to="/">ВЫЙТИ</Link>
+          <Link className="w-full h-full" to="/">
+            ВЫЙТИ
+          </Link>
         </Button>
       </header>
     </main>

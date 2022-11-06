@@ -18,7 +18,7 @@ const Bars = ({ data, height = 500, title, bar1, bar2, x }) => {
   return (
     <div
       ref={containerRef}
-      className="w-full overflow-hidden bg-white rounded-md shadow-md"
+      className="w-full overflow-hidden bg-white rounded-md shadow-md py-4"
     >
       <h2 className="text-center text-2xl font-bold mb-4">{title}</h2>
       <BarChart
@@ -35,7 +35,7 @@ const Bars = ({ data, height = 500, title, bar1, bar2, x }) => {
         <CartesianGrid strokeDasharray="3 3" />
         <XAxis dataKey={x} />
         <YAxis yAxisId="left" orientation="left" stroke="#2A3958" />
-        <YAxis yAxisId="right" orientation="right" stroke="#D71827" />
+        {bar2 && <YAxis yAxisId="right" orientation="right" stroke="#D71827" />}
         <Tooltip />
         <Legend />
         <Bar yAxisId="left" dataKey={bar1} fill="#2A3958" />

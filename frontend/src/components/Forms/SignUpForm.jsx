@@ -41,11 +41,13 @@ const SignUpForm = () => {
       />
 
       <Button variant="contained" type="submit">
-        <Link to="/profile">Регистрация</Link>
+        <Link className="w-full h-full" to="/profile">
+          Регистрация
+        </Link>
       </Button>
       <span className="text-center">
         Уже есть учетная запись?{" "}
-        <Link className="text-blue-100" to="/login">
+        <Link className="text-blue-100 w-full h-full" to="/login">
           Войти
         </Link>
       </span>
