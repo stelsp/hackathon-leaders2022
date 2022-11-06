@@ -10,18 +10,23 @@ const ComparisonVolume = () => {
   const [volume] = useState(TradingVolume);
   const [volumeItem, setVolumeItem] = useState(TradingVolume[0]);
 
+  const handleRowClick = (params) => {
+    const item = volume.find((el) => el.tnved === params.row.tnved);
+    setVolumeItem(item);
+  };
+
   return (
     <main className="py-16 flex flex-col gap-6">
       <div className="mb-10">
         <h2 className="text-center text-2xl font-bold mb-10">Объем торгов</h2>
         <div className="flex items-center justify-between">
           <div className="flex">
-            <Button variant="contained" type="button" color="inherit">
+            <Button disabled variant="contained" type="button" color="inherit">
               <Link className="w-full h-full" to="/comparison/volume">
                 Объем Торгов
               </Link>
             </Button>
-            <Button variant="contained" type="button">
+            <Button variant="contained" type="button" color="inherit">
               <Link className="w-full h-full" to="/comparison/balance">
                 Торговый Баланс
               </Link>
@@ -53,7 +58,7 @@ const ComparisonVolume = () => {
           />
         </div>
         <div className="bg-white rounded-md shadow-md">
-          <TableVolume />
+          <TableVolume handleRowClick={handleRowClick} />
         </div>
       </div>
       <h2 className="text-center text-2xl font-bold">По выделенному товару</h2>

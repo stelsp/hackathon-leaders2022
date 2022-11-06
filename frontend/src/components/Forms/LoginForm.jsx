@@ -38,7 +38,7 @@ const LoginForm = () => {
         </Link>
       </Button>
       <Link className="text-center text-blue-100" to="/sign_up">
-        Зарегистрироваться
+        Регистрация
       </Link>
     </form>
   );

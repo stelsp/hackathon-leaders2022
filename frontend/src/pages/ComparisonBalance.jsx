@@ -3,13 +3,17 @@ import Bars from "../components/Charts/Bars";
 import Lines from "../components/Charts/Lines";
 import TableBalance from "../components/Tables/TableBalance";
 import Button from "@mui/material/Button";
-
-import { TradeBalance } from "../store/mockDB.json";
 import { Link } from "react-router-dom";
+import { TradeBalance } from "../store/mockDB.json";
 
 const ComparisonBalance = () => {
   const [balance] = useState(TradeBalance);
   const [balanceItem, setBalanceItem] = useState(TradeBalance[0]);
+
+  const handleRowClick = (params) => {
+    const item = balance.find((el) => el.tnved === params.row.tnved);
+    setBalanceItem(item);
+  };
 
   return (
     <main className="py-16 flex flex-col gap-6">
@@ -19,12 +23,12 @@ const ComparisonBalance = () => {
         </h2>
         <div className="flex items-center justify-between">
           <div className="flex">
-            <Button variant="contained" type="button">
+            <Button variant="contained" type="button" color="inherit">
               <Link className="w-full h-full" to="/comparison/volume">
                 Объем Торгов
               </Link>
             </Button>
-            <Button variant="contained" type="button" color="inherit">
+            <Button disabled variant="contained" type="button" color="inherit">
               <Link className="w-full h-full" to="/comparison/balance">
                 Торговый Баланс
               </Link>
@@ -44,7 +48,7 @@ const ComparisonBalance = () => {
           title={"Торговый баланс"}
         />
         <div className="bg-white rounded-md shadow-md">
-          <TableBalance />
+          <TableBalance handleRowClick={handleRowClick} />
         </div>
       </div>
       <h2 className="text-center text-2xl font-bold">По выделенному товару</h2>

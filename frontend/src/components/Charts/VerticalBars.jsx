@@ -2,14 +2,12 @@ import React, { useRef } from "react";
 
 import {
   ComposedChart,
-  Line,
   Bar,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   Legend,
-  Area,
 } from "recharts";
 import { useElementSize } from "./useElementSize";
 

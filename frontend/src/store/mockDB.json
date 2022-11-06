@@ -4,6 +4,49 @@
       "id": "1",
       "name": "НАЗВАНИЕ 1",
       "tnved": "0101210001",
+      "ImportStoimAll": 50000,
+      "ImportNettoAll": 21000,
+      "ExportStoimAll": 32000,
+      "ExportNettoAll": 23000,
+      "napr": {
+        "export": {
+          "barChart": [
+            {
+              "nastranapr": "BE",
+              "Stoim": 50000.0,
+              "Netto": 1100.0
+            }
+          ],
+          "lineChart": [
+            {
+              "period": "2021-01",
+              "Stoim": 4800.0,
+              "Netto": 1500.0
+            }
+          ]
+        },
+        "import": {
+          "barChart": [
+            {
+              "nastranapr": "US",
+              "Stoim": 7939.09,
+              "Netto": 420.0
+            }
+          ],
+          "lineChart": [
+            {
+              "period": "2021-01",
+              "Stoim": 144800.0,
+              "Netto": 500.0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "2",
+      "name": "НАЗВАНИЕ 2",
+      "tnved": "0101210002",
       "ImportStoimAll": 10000,
       "ImportNettoAll": 11000,
       "ExportStoimAll": 12000,
@@ -82,6 +125,48 @@
               "period": "2021-01",
               "Stoim": 44800.0,
               "Netto": 1500.0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "2",
+      "name": "НАЗВАНИЕ 2",
+      "tnved": "0101210002",
+      "ImportNettoAll": 21000,
+      "ExportNettoAll": 23000,
+      "balance": 34000,
+      "napr": {
+        "export": {
+          "barChart": [
+            {
+              "nastranapr": "BE",
+              "Stoim": 20000.0,
+              "Netto": 4100.0
+            }
+          ],
+          "lineChart": [
+            {
+              "period": "2021-01",
+              "Stoim": 2626.48,
+              "Netto": 1000.0
+            }
+          ]
+        },
+        "import": {
+          "barChart": [
+            {
+              "nastranapr": "US",
+              "Stoim": 7939.09,
+              "Netto": 77420.0
+            }
+          ],
+          "lineChart": [
+            {
+              "period": "2021-01",
+              "Stoim": 14800.0,
+              "Netto": 500.0
             }
           ]
         }

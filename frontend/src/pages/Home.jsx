@@ -3,9 +3,9 @@ import SearchForm from "../components/Forms/SearchForm";
 
 const Home = () => {
   return (
-    <div className="py-16">
+    <main className="py-16">
       <SearchForm />
-    </div>
+    </main>
   );
 };
 
