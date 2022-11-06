@@ -38,7 +38,7 @@ const SearchForm = () => {
       <h3 className="text-center text-xl font-semibold">Поиск</h3>
       <Autocomplete
         disablePortal
-        id="Region"
+        id="District"
         options={region}
         onChange={(event, value) => {
           const sub = region.find((el) => el.value === value.value);
@@ -48,20 +48,20 @@ const SearchForm = () => {
           <TextField
             {...params}
             label="Федеральный округ"
-            {...register("Region", {})}
+            {...register("District", {})}
           />
         )}
       />
       {subject && (
         <Autocomplete
           disablePortal
-          id="Subject"
+          id="Region"
           options={subject.subject}
           renderInput={(params) => (
             <TextField
               {...params}
               label="Субъект"
-              {...register("Subject", {})}
+              {...register("Region", {})}
             />
           )}
         />
