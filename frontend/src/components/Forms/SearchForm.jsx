@@ -33,7 +33,7 @@ const SearchForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="max-w-md mx-auto p-12 flex flex-col gap-6 rounded-lg shadow-lg bg-white"
+      className="max-w-md mx-auto p-12 flex flex-col gap-6 rounded-lg shadow-lg bg-base-white"
     >
       <h3 className="text-center text-xl font-semibold">Поиск</h3>
       <Autocomplete
@@ -98,9 +98,9 @@ const SearchForm = () => {
         </LocalizationProvider>
       </div>
       <Button variant="contained" type="submit">
-        {/* <Link className="w-full h-full" to="/comparison/volume">
+        <Link className="text-center" to="/comparison/volume">
           Показать результаты
-        </Link> */}
+        </Link>
       </Button>
     </form>
   );

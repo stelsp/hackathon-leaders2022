@@ -20,12 +20,12 @@ const ComparisonVolume = () => {
       <div className="mb-10">
         <div className="flex items-center justify-between">
           <div className="flex">
-            <Button disabled variant="contained" type="button" color="inherit">
+            <Button variant="contained" type="button" color="inherit">
               <Link className="w-full h-full" to="/comparison/volume">
                 Объем Торгов
               </Link>
             </Button>
-            <Button variant="contained" type="button" color="inherit">
+            <Button variant="outlined" type="button" color="inherit">
               <Link className="w-full h-full" to="/comparison/balance">
                 Торговый Баланс
               </Link>
@@ -40,23 +40,23 @@ const ComparisonVolume = () => {
         <div className="grid grid-cols-2 gap-6">
           <Bars
             data={volume}
-            bar1="ImportStoimAll"
-            bar2="ImportNettoAll"
+            bar1="Import_Stoim"
+            bar2="Import_Netto"
             x="id"
             height={300}
-            title={`Импорт`}
+            title={`Импорт за период`}
           />
 
           <Bars
             data={volume}
-            bar1="ExportStoimAll"
-            bar2="ExportNettoAll"
+            bar1="Export_Stoim"
+            bar2="Export_Netto"
             x="id"
             height={300}
-            title={`Экспорт`}
+            title={`Экспорт за период`}
           />
         </div>
-        <div className="bg-white rounded-md shadow-md">
+        <div className="rounded-md shadow-md">
           <TableVolume handleRowClick={handleRowClick} />
         </div>
       </div>
@@ -65,12 +65,12 @@ const ComparisonVolume = () => {
         <Lines
           data={volumeItem && volumeItem.napr.import.lineChart}
           height={300}
-          title={`Импорт`}
+          title={`Импорт за период`}
         />
         <Lines
           data={volumeItem && volumeItem.napr.export.lineChart}
           height={300}
-          title={`Экспорт`}
+          title={`Экспорт за период`}
         />
         <Bars
           data={volumeItem && volumeItem.napr.import.barChart}
@@ -78,7 +78,7 @@ const ComparisonVolume = () => {
           bar2="Netto"
           x="nastranapr"
           height={300}
-          title={`Импорт`}
+          title={`Импорт по странам`}
         />
         <Bars
           data={volumeItem && volumeItem.napr.export.barChart}
@@ -86,7 +86,7 @@ const ComparisonVolume = () => {
           bar2="Netto"
           x="nastranapr"
           height={300}
-          title={`Экспорт`}
+          title={`Экспорт по странам`}
         />
       </div>
     </main>

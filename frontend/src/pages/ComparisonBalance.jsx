@@ -20,12 +20,12 @@ const ComparisonBalance = () => {
       <div className="mb-10">
         <div className="flex items-center justify-between">
           <div className="flex">
-            <Button variant="contained" type="button" color="inherit">
+            <Button variant="outlined" type="button" color="inherit">
               <Link className="w-full h-full" to="/comparison/volume">
                 Объем Торгов
               </Link>
             </Button>
-            <Button disabled variant="contained" type="button" color="inherit">
+            <Button variant="contained" type="button" color="inherit">
               <Link className="w-full h-full" to="/comparison/balance">
                 Торговый Баланс
               </Link>
@@ -41,10 +41,10 @@ const ComparisonBalance = () => {
           data={balance}
           bar1="balance"
           x="id"
-          height={500}
+          height={300}
           title={"Торговый баланс"}
         />
-        <div className="bg-white rounded-md shadow-md">
+        <div className="rounded-md shadow-md">
           <TableBalance handleRowClick={handleRowClick} />
         </div>
       </div>
@@ -53,12 +53,12 @@ const ComparisonBalance = () => {
         <Lines
           data={balanceItem && balanceItem.napr.import.lineChart}
           height={300}
-          title={`Импорт`}
+          title={`Импорт за период`}
         />
         <Lines
           data={balanceItem && balanceItem.napr.export.lineChart}
           height={300}
-          title={`Экспорт`}
+          title={`Экспорт за период`}
         />
         <Bars
           data={balanceItem && balanceItem.napr.import.barChart}
@@ -66,7 +66,7 @@ const ComparisonBalance = () => {
           bar2="Netto"
           x="nastranapr"
           height={300}
-          title={`Импорт`}
+          title={`Импорт по странам`}
         />
         <Bars
           data={balanceItem && balanceItem.napr.export.barChart}
@@ -74,7 +74,7 @@ const ComparisonBalance = () => {
           bar2="Netto"
           x="nastranapr"
           height={300}
-          title={`Экспорт`}
+          title={`Экспорт по странам`}
         />
       </div>
     </main>
