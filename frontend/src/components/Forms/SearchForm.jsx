@@ -97,7 +97,7 @@ const SearchForm = () => {
       </div>
       <Button variant="contained" type="submit">
         <Link className="w-full h-full" to="/comparison/volume">
-          Найти
+          Показать результаты
         </Link>
       </Button>
     </form>

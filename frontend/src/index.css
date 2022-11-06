@@ -5,13 +5,11 @@
 
 * {
   box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
 }
 
 body {
   min-height: 100vh;
   min-width: 320px;
   width: 100%;
-  font-family: "Raleway", sans-serif;
-
-  background: #f8f8f8;
 }

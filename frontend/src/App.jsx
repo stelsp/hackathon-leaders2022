@@ -9,20 +9,22 @@ const App = () => {
   };
 
   return (
-    <div className="overflow-hidden">
-      <header className="py-4 flex items-center bg-white border-b-2 border-sky-100">
-        <div className="relative flex items-center justify-between container mx-auto ">
+    <div className="overflow-hidden h-full bg-secondary-BGLT">
+      <header className="py-4 flex items-center  border-b-2 bg-base-white border-main-middle3C">
+        <div className="relative flex items-center justify-between container mx-auto">
           <div className="flex items-center gap-16">
-            <div className="font-extrabold text-3xl text-sky-200">LOGO</div>
-            <nav className="flex gap-8 text-sky-100 font-bold">
+            <div className="font-extrabold text-3xl text-main-middle3C">
+              LOGO
+            </div>
+            <nav className="flex gap-8 font-bold text-main-middle3C">
               <Link to="/">Поиск</Link>
             </nav>
           </div>
           <nav
             className={
               show
-                ? "absolute z-10 top-5 right-5 p-4 flex flex-col gap-4 rounded-md shadow-md bg-sky-200 text-gray-100 font-bold transition ease-in-out delay-150 animate"
-                : "absolute z-10 top-5 right-5 flex flex-col gap-4 rounded-md shadow-md bg-sky-200 text-gray-100 font-bold transition ease-in-out delay-150 opacity-0 translate-x-[50%] translate-y-[-50%] w-0 h-0"
+                ? "absolute z-10 top-5 right-5 p-4 flex flex-col gap-4 rounded-md shadow-md font-bold transition ease-in-out delay-150 animate bg-secondary-150 text-base-white"
+                : "absolute z-10 top-5 right-5 flex flex-col gap-4 rounded-md shadow-md font-bold transition ease-in-out delay-150 opacity-0 translate-x-[50%] translate-y-[-50%] w-0 h-0 bg-secondary-150 text-base-white"
             }
           >
             <Link
@@ -49,9 +51,9 @@ const App = () => {
           </nav>
           <div
             onClick={handleToggle}
-            className="relative z-20 w-10 h-10 flex items-center justify-center text-gray-100 font-bold text-lg bg-sky-100 rounded-full shadow-md hover:scale-105 cursor-pointer active:scale-110"
+            className="relative z-20 w-10 h-10 flex items-center justify-center font-bold text-lg  rounded-full shadow-md hover:scale-105 cursor-pointer active:scale-110 bg-secondary-150 text-base-white"
           >
-            R
+            A
           </div>
         </div>
       </header>

@@ -19,9 +19,12 @@ const TableBalance = ({ handleRowClick }) => {
         onRowClick={handleRowClick}
         rows={TradeBalance}
         columns={columns}
-        pageSize={5}
-        rowsPerPageOptions={[5]}
+        // pageSize={5}
+        // rowsPerPageOptions={[5]}
         components={{ Toolbar: GridToolbar }}
+        sx={{
+          border: 0,
+        }}
       />
     </div>
   );

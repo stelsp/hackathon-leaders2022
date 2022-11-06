@@ -18,7 +18,6 @@ const ComparisonVolume = () => {
   return (
     <main className="py-16 flex flex-col gap-6">
       <div className="mb-10">
-        <h2 className="text-center text-2xl font-bold mb-10">Объем торгов</h2>
         <div className="flex items-center justify-between">
           <div className="flex">
             <Button disabled variant="contained" type="button" color="inherit">
@@ -61,7 +60,7 @@ const ComparisonVolume = () => {
           <TableVolume handleRowClick={handleRowClick} />
         </div>
       </div>
-      <h2 className="text-center text-2xl font-bold">По выделенному товару</h2>
+      <h3 className="text-center text-2xl font-bold">По выделенному товару</h3>
       <div className="grid grid-cols-2 gap-6">
         <Lines
           data={volumeItem && volumeItem.napr.import.lineChart}
