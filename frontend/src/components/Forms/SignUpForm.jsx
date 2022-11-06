@@ -15,7 +15,7 @@ const SignUpForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="max-w-md mx-auto p-12 flex flex-col gap-6 rounded-lg shadow-lg bg-white"
+      className="max-w-md mx-auto p-12 flex flex-col gap-6 rounded-lg shadow-lg"
     >
       <h3 className="text-center text-xl font-semibold">Регистрация</h3>
       <TextField
@@ -47,7 +47,7 @@ const SignUpForm = () => {
       </Button>
       <span className="text-center">
         Уже есть учетная запись?{" "}
-        <Link className="text-blue-100 w-full h-full" to="/login">
+        <Link className="w-full h-full text-secondary-150" to="/login">
           Войти
         </Link>
       </span>

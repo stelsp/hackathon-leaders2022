@@ -56,7 +56,7 @@ const ComparisonVolume = () => {
             title={`Экспорт`}
           />
         </div>
-        <div className="bg-white rounded-md shadow-md">
+        <div className="rounded-md shadow-md">
           <TableVolume handleRowClick={handleRowClick} />
         </div>
       </div>

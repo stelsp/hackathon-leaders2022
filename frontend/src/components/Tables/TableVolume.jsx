@@ -20,8 +20,8 @@ const TableVolume = ({ handleRowClick }) => {
         onRowClick={handleRowClick}
         rows={TradingVolume}
         columns={columns}
-        pageSize={5}
-        rowsPerPageOptions={[5]}
+        // pageSize={5}
+        // rowsPerPageOptions={[5]}
         components={{ Toolbar: GridToolbar }}
       />
     </div>

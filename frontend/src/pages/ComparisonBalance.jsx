@@ -44,7 +44,7 @@ const ComparisonBalance = () => {
           height={500}
           title={"Торговый баланс"}
         />
-        <div className="bg-white rounded-md shadow-md">
+        <div className="rounded-md shadow-md">
           <TableBalance handleRowClick={handleRowClick} />
         </div>
       </div>
