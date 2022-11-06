@@ -1,7 +1,12 @@
 import React from "react";
+import SearchForm from "../components/Forms/SearchForm";
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <main className="py-16">
+      <SearchForm />
+    </main>
+  );
 };
 
 export default Home;
