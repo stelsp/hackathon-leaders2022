@@ -18,7 +18,7 @@ const Lines = ({ data, height = 500, title }) => {
   return (
     <div
       ref={containerRef}
-      className="w-full overflow-hidden bg-white rounded-md shadow-md py-4"
+      className="w-full overflow-hidden bg-white rounded-md shadow-md py-4 bg-base-white"
     >
       <h2 className="text-center text-2xl font-bold mb-4">{title}</h2>
       <LineChart
@@ -27,8 +27,8 @@ const Lines = ({ data, height = 500, title }) => {
         data={data}
         margin={{
           top: 5,
-          right: 20,
-          left: 20,
+          right: 50,
+          left: 50,
           bottom: 5,
         }}
       >

@@ -18,17 +18,19 @@ const Bars = ({ data, height = 500, title, bar1, bar2, x }) => {
   return (
     <div
       ref={containerRef}
-      className="py-4 w-full overflow-hidden rounded-md shadow-md"
+      className="py-4 w-full overflow-hidden rounded-md shadow-md bg-base-white dark:bg-secondary-dark"
     >
-      <h2 className="mb-4 text-center text-2xl font-bold">{title}</h2>
+      <h2 className="mb-4 text-center text-2xl font-bold text-base-black dark:text-base-166">
+        {title}
+      </h2>
       <BarChart
         width={width}
         height={height}
         data={data}
         margin={{
           top: 5,
-          right: 20,
-          left: 20,
+          right: 50,
+          left: 50,
           bottom: 5,
         }}
       >

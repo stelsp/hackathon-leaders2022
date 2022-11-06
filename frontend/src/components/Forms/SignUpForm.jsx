@@ -15,7 +15,7 @@ const SignUpForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="max-w-md mx-auto p-12 flex flex-col gap-6 rounded-lg shadow-lg"
+      className="max-w-md mx-auto p-12 flex flex-col gap-6 rounded-lg shadow-lg bg-base-white"
     >
       <h3 className="text-center text-xl font-semibold">Регистрация</h3>
       <TextField
