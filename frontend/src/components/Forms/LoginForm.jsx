@@ -1,5 +1,8 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
 
 const LoginForm = () => {
   const {
@@ -12,31 +15,29 @@ const LoginForm = () => {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="container max-w-sm mx-auto flex flex-col gap-2"
+      className="max-w-md mx-auto p-12 flex flex-col gap-6 rounded-lg shadow-lg bg-white"
     >
-      <div className="p-4 flex flex-col gap-4 rounded-lg shadow-lg  bg-white">
-        <h3 className="text-center text-xl font-semibold">Вход</h3>
-
-        <input
-          type="email"
-          placeholder="johndoe@mail.com"
-          {...register("Email", {})}
-          className="p-1 border-2  rounded-md"
-        />
-        <input
-          type="password"
-          placeholder="Password"
-          {...register("Password", {})}
-          className="p-1 border-2  rounded-md"
-        />
-
-        <button
-          type="submit"
-          className="py-1 px-2 mt-4 self-end border-2 rounded-md bg-white active:scale-110 "
-        >
-          Войти
-        </button>
-      </div>
+      <h3 className="text-center text-xl font-semibold">Вход</h3>
+      <TextField
+        id="email"
+        type="email"
+        label="johndoe@mail.com"
+        variant="outlined"
+        {...register("Email", {})}
+      />
+      <TextField
+        id="password"
+        type="password"
+        label="password"
+        variant="outlined"
+        {...register("Password", {})}
+      />
+      <Button variant="contained" type="submit">
+        <Link to="/profile">Войти</Link>
+      </Button>
+      <Link className="text-center text-blue-100" to="/sign_up">
+        Зарегистрироваться
+      </Link>
     </form>
   );
 };

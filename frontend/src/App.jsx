@@ -27,14 +27,14 @@ const App = () => {
             <Link
               onClick={handleToggle}
               to="/login"
-              className={!show && "hidden"}
+              className={!show ? "hidden" : ""}
             >
               Войти
             </Link>
             <Link
               onClick={handleToggle}
               to="/sign_up"
-              className={!show && "hidden"}
+              className={!show ? "hidden" : ""}
             >
               Зарегистрироваться
             </Link>

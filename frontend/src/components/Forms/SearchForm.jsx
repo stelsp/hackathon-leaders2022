@@ -29,74 +29,75 @@ const SearchForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="max-w-md mx-auto">
-      <div className="p-6 flex flex-col gap-6 rounded-lg shadow-lg bg-white">
-        <h3 className="text-center text-xl font-semibold">Поиск</h3>
+    <form
+      onSubmit={handleSubmit(onSubmit)}
+      className="max-w-md mx-auto p-12 flex flex-col gap-6 rounded-lg shadow-lg bg-white"
+    >
+      <h3 className="text-center text-xl font-semibold">Поиск</h3>
+      <Autocomplete
+        disablePortal
+        id="Region"
+        options={region}
+        onChange={(event, value) => {
+          const sub = region.find((el) => el.value === value.value);
+          setSubject(sub);
+        }}
+        renderInput={(params) => (
+          <TextField
+            {...params}
+            label="Федеральный округ"
+            {...register("Region", {})}
+          />
+        )}
+      />
+      {subject && (
         <Autocomplete
           disablePortal
-          id="Region"
-          options={region}
-          onChange={(event, value) => {
-            const sub = region.find((el) => el.value === value.value);
-            setSubject(sub);
-          }}
+          id="Subject"
+          options={subject.subject}
           renderInput={(params) => (
             <TextField
               {...params}
-              label="Федеральный округ"
-              {...register("Region", {})}
+              label="Субъект"
+              {...register("Subject", {})}
             />
           )}
         />
-        {subject && (
-          <Autocomplete
-            disablePortal
-            id="Subject"
-            options={subject.subject}
+      )}
+
+      <div className="flex gap-6">
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <DatePicker
+            minDate={minDate}
+            maxDate={maxDate}
+            label="Начало"
+            value={start}
+            onChange={(newValue) => {
+              setStart(newValue);
+            }}
             renderInput={(params) => (
-              <TextField
-                {...params}
-                label="Субъект"
-                {...register("Subject", {})}
-              />
+              <TextField {...params} {...register("StartDate", {})} />
             )}
           />
-        )}
-
-        <div className="flex gap-6">
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DatePicker
-              minDate={minDate}
-              maxDate={maxDate}
-              label="Начало"
-              value={start}
-              onChange={(newValue) => {
-                setStart(newValue);
-              }}
-              renderInput={(params) => (
-                <TextField {...params} {...register("StartDate", {})} />
-              )}
-            />
-          </LocalizationProvider>
-          <LocalizationProvider dateAdapter={AdapterDayjs}>
-            <DatePicker
-              minDate={minDate}
-              maxDate={maxDate}
-              label="Конец"
-              value={end}
-              onChange={(newValue) => {
-                setEnd(newValue);
-              }}
-              renderInput={(params) => (
-                <TextField {...params} {...register("EndDate", {})} />
-              )}
-            />
-          </LocalizationProvider>
-        </div>
-        <Button variant="contained" type="submit">
-          <Link to="/comparison/volume">Объем торгов</Link>
-        </Button>
+        </LocalizationProvider>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <DatePicker
+            minDate={minDate}
+            maxDate={maxDate}
+            label="Конец"
+            value={end}
+            onChange={(newValue) => {
+              setEnd(newValue);
+            }}
+            renderInput={(params) => (
+              <TextField {...params} {...register("EndDate", {})} />
+            )}
+          />
+        </LocalizationProvider>
       </div>
+      <Button variant="contained" type="submit">
+        <Link to="/comparison/volume">Объем торгов</Link>
+      </Button>
     </form>
   );
 };
